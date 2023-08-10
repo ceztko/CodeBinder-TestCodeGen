@@ -1,0 +1,19 @@
+﻿/* This file was generated. DO NOT EDIT! */
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <LangVersion>preview</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PublishAot>true</PublishAot>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <AssemblySearchPaths>$(AssemblySearchPaths);$(OutputPath)</AssemblySearchPaths>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="CodeBinder.Redist" />
+  </ItemGroup>
+
+</Project>
