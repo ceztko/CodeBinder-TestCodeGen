@@ -1,4 +1,9 @@
 ﻿/* This file was generated. DO NOT EDIT! */
+/**
+ * SPDX-FileCopyrightText: (C) 2020 Francesco Pretto <ceztko@gmail.com>
+ * SPDX-License-Identifier: MIT-0
+ */
+
 #ifndef CODE_BINDER_BASE_TYPES
 #define CODE_BINDER_BASE_TYPES
 #pragma once

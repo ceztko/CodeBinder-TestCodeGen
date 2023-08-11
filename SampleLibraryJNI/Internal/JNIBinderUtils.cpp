@@ -1,4 +1,9 @@
 ﻿/* This file was generated. DO NOT EDIT! */
+/**
+ * SPDX-FileCopyrightText: (C) 2019 Francesco Pretto <ceztko@gmail.com>
+ * SPDX-License-Identifier: MIT-0
+ */
+
 #include "JNITypes.h"
 
 extern "C"

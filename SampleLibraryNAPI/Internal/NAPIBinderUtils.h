@@ -1,4 +1,9 @@
 ﻿/* This file was generated. DO NOT EDIT! */
+/**
+ * SPDX-FileCopyrightText: (C) 2023 Francesco Pretto <ceztko@gmail.com>
+ * SPDX-License-Identifier: MIT-0
+ */
+
 #include "JSNAPI.h"
 
 namespace js

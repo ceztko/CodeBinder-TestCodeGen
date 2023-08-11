@@ -1,4 +1,9 @@
 ﻿/* This file was generated. DO NOT EDIT! */
+/**
+ * SPDX-FileCopyrightText: (C) 2020 Francesco Pretto <ceztko@gmail.com>
+ * SPDX-License-Identifier: MIT-0
+ */
+
 #import "CBHandledObject.h"
 #import "../Internal/CBHandledObject.h"
 #import "../Internal/CBOCBinderUtils.h"
