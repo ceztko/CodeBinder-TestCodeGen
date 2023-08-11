@@ -1,5 +1,4 @@
-﻿/* This file was generated. DO NOT EDIT! */
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Library</OutputType>
