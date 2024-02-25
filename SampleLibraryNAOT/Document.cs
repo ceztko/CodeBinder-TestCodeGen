@@ -1,6 +1,4 @@
-﻿/* This file was generated. DO NOT EDIT! */
-
-partial class Document
+﻿partial class Document
 {
     public static unsafe partial void SLFreeDocument(
         SLDocument* doc)

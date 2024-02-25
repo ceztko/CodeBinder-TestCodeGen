@@ -1,10 +1,4 @@
-﻿// Opaque types
-
-partial struct SLAnnotation { }
-partial struct SLDocument { }
-partial struct SLPdfPage { }
-
-// Enums
+﻿// Enums
 
 enum SLAnnotationType
 {

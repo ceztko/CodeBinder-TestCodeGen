@@ -18,4 +18,14 @@ public class HandleRef
         this.wrapper = wrapper;
         this.handle = handle;
     }
+
+    public Object getWrapper()
+    {
+        return this.wrapper;
+    }
+
+    public long getHandle()
+    {
+        return this.handle;
+    }
 }

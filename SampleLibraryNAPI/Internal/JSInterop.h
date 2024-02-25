@@ -38,7 +38,9 @@ namespace js
     DECLARE_SYMBOL(napi_throw_error);
     DECLARE_SYMBOL(napi_throw_type_error);
     DECLARE_SYMBOL(napi_throw_range_error);
+    DECLARE_SYMBOL(napi_get_undefined);
     DECLARE_SYMBOL(napi_get_null);
+    DECLARE_SYMBOL(napi_strict_equals);
     DECLARE_SYMBOL(napi_get_global);
     DECLARE_SYMBOL(napi_get_boolean);
     DECLARE_SYMBOL(napi_get_value_string_utf8);
@@ -95,7 +97,20 @@ namespace js
     {
         napi_value nullval;
         napi_get_null(env, &nullval);
-        return value == nullval;
+
+        bool ret;
+        napi_strict_equals(env, value, nullval, &ret);
+        return ret;
+    }
+
+    inline bool IsUndefined(napi_env env, napi_value value)
+    {
+        napi_value undefvalue;
+        napi_get_undefined(env, &undefvalue);
+
+        bool ret;
+        napi_strict_equals(env, value, undefvalue, &ret);
+        return ret;
     }
 
     inline cbbool GetBoolFromNapiValue(napi_env env, napi_value value)
@@ -103,6 +118,24 @@ namespace js
         bool ret;
         napi_get_value_bool(env, value, &ret);
         return (cbbool)ret;
+    }
+
+    inline cboptbool GetOptBoolFromNapiValue(napi_env env, napi_value value)
+    {
+        if (IsNull(env, value))
+        {
+            return cboptbool{ };
+        }
+        else
+        {
+            bool boolval;
+            napi_get_value_bool(env, value, &boolval);
+
+            cboptbool ret;
+            ret.has_value = (cbbool)true;
+            ret.value = (cbbool)boolval;
+            return ret;
+        }
     }
 
     inline int8_t GetInt8FromNapiValue(napi_env env, napi_value value)
@@ -351,7 +384,7 @@ namespace js
         AJS2N(napi_env env, napi_value arr, bool commit)
             : m_env(env), m_jsarray(arr), m_commit(commit)
         {
-            if (arr == nullptr)
+            if (IsNull(env, arr))
                 m_narray = nullptr;
             else
                 m_narray = AJSShim<TNArray>::GetNativeArray(env, arr);

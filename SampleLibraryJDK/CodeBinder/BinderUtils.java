@@ -5,6 +5,7 @@ import java.lang.reflect.*;
 
 public class BinderUtils
 {
+    static volatile Object _keepAlive;
     static Object _cleaner;
     static Method _register;
 
@@ -24,7 +25,11 @@ public class BinderUtils
                 _register = cleanerClass.getDeclaredMethod("register", Object.class, Runnable.class);
                 _cleaner = create.invoke(null);
             }
-            catch (ClassNotFoundException | InvocationTargetException | IllegalAccessException |
+            catch (ClassNotFoundException ex)
+            {
+                // Do nothing. "java.lang.ref.Cleaner" is not avaiable
+            }
+            catch (InvocationTargetException | IllegalAccessException |
                    NoSuchMethodException ex)
             {
                 System.err.println(ex);
@@ -78,6 +83,11 @@ public class BinderUtils
             deleteGlobalWeakRef(nativeHandle.handle);
         else
             deleteGlobalRef(nativeHandle.handle);
+    }
+
+    public static void keepAlive(Object obj)
+    {
+        _keepAlive = obj;
     }
 
     static void registerForFinalization(Object obj, IObjectFinalizer finalizer)

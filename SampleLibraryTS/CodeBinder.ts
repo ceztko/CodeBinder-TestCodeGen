@@ -1,4 +1,4 @@
-import napi_ from './NAPIENLibPdf';
+import napi_ from './NAPISampleLibrary';
 let napi: any = napi_;
 
 export class NativeHandle
@@ -63,6 +63,11 @@ export class BinderUtils
     static freeNativeHandle(nativeHandle: NativeHandle): void
     {
         napi.FreeNativeHandle(nativeHandle.address);
+    }
+
+    static keepAlive(obj: object): void
+    {
+        // Do nothing
     }
 
     // FIXME: This is garbage, this should replaced by proper AST manipulation
@@ -276,14 +281,14 @@ export interface IReadOnlyList<T> extends Iterable<T>
 
 export class KeyValuePair<TKey, TValue> extends ObjectTS
 {
-    key:TKey | null;
-    value:TValue | null;
+    key:TKey;
+    value:TValue;
 
     constructor(key?: TKey, value?: TValue)
     {
         super();
-        this.key = key ?? null;
-        this.value = value ?? null;
+        this.key = key ?? null!;
+        this.value = value ?? null!;
     }
 }
 

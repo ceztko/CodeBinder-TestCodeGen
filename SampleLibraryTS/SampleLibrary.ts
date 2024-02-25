@@ -1,6 +1,6 @@
 
 import { NativeHandle, BinderUtils, ObjectTS, Exception, HandleRef, BooleanRefBox, NumberRefBox, BigIntRefBox, StringRefBox, IObjectFinalizer, HandledObjectFinalizer, FinalizableObject, HandledObjectBase, HandledObject, IDisposable, IReadOnlyList, KeyValuePair, IEqualityComparer, NotImplementedException, BooleanArray } from './CodeBinder';
-import napi_ from './NAPIENLibPdf';
+import napi_ from './NAPISampleLibrary';
 let napi: any = napi_;
 
 // Enums
@@ -50,6 +50,7 @@ export class Annotation extends HandledObject<Annotation>
         this._type = type;
         this._page = page;
     }
+
     /** @internal */
 
     static createAnnotation(
@@ -60,6 +61,7 @@ export class Annotation extends HandledObject<Annotation>
         let type: AnnotationType = napi.SLAnnotGetType(annot);
         return Annotation.createAnnotationWithType(annot, type, page);
     }
+
     /** @internal */
 
     static createAnnotationWithType(
@@ -99,7 +101,9 @@ export class Annotation extends HandledObject<Annotation>
 
 export class AnnotationLink extends Annotation
 {
+
     /** @internal */
+
     constructor(
         page: Page,
         annot: number
@@ -112,7 +116,9 @@ export class AnnotationLink extends Annotation
 
 export class AnnotationPopup extends Annotation
 {
+
     /** @internal */
+
     constructor(
         page: Page,
         annot: number
@@ -242,6 +248,7 @@ export class Document extends HandledObject<Document>
 export class PageCollection extends ObjectTS implements Iterable<Page>
 {
     private _doc: Document = null!;
+
     /** @internal */
 
     constructor(doc: Document)
@@ -304,6 +311,7 @@ export class PageCollection extends ObjectTS implements Iterable<Page>
 export class Metadata extends ObjectTS
 {
     private _doc: Document = null!;
+
     /** @internal */
 
     constructor(doc: Document)
@@ -336,6 +344,7 @@ export class Page extends HandledObject<Page>
     {
         this.__document = value;
     }
+
     /** @internal */
 
     constructor(
@@ -347,12 +356,14 @@ export class Page extends HandledObject<Page>
         this._annotations = new PageAnnotationCollection(this);
         this.document = doc;
     }
+
     /** @internal */
 
     getAnnotationCount(): number
     {
         return napi.SLPageGetAnnotationCount(this.handle);
     }
+
     /** @internal */
 
     getAnnotations<TAnnotation extends Annotation>(
@@ -392,6 +403,7 @@ export class Page extends HandledObject<Page>
 export class PageAnnotationCollection extends AnnotationCollection
 {
     private _page: Page = null!;
+
     /** @internal */
 
     constructor(page: Page)

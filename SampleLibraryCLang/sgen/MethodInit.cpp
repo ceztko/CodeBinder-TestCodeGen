@@ -3,7 +3,9 @@
 #include "Document.h"
 #include "Page.h"
 
-static void* funcs[] = {
+// Reference this symbol to ensure all functions are defined
+// See https://github.com/dotnet/samples/tree/3870722f5c5e80fd6a70946e6e96a5c990620e42/core/nativeaot/NativeLibrary#user-content-building-static-libraries
+extern "C" void* CB_CLangExports[] = {
     (void *)SLAnnotGetType,
     (void *)SLAnnotGetRect,
     (void *)SLFreeDocument,

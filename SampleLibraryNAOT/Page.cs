@@ -1,6 +1,4 @@
-﻿/* This file was generated. DO NOT EDIT! */
-
-partial class Page
+﻿partial class Page
 {
     public static unsafe partial void SLPageGetAnnotations(
         SLPdfPage* page, SLAnnotation** annots)

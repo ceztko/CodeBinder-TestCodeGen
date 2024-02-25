@@ -1,0 +1,5 @@
+NAPI {
+    global: _init; _fini;
+        napi_register_module_v1;
+    local: *;
+};

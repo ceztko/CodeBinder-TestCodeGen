@@ -134,6 +134,11 @@ extern "C"
         }
     }
 
+    inline cboptbool CBCreateOptBool(cbbool value)
+    {
+        return cboptbool{ (cbbool)true, value };
+    }
+
 #ifdef __cplusplus
 }
 #endif // __cplusplus

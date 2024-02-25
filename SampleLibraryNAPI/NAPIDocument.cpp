@@ -57,7 +57,7 @@ extern "C" napi_value NAPI_SLPdfLoadBuffer(
     auto offset = GetInt32FromNapiValue(env, args[1]);
     auto size = GetInt32FromNapiValue(env, args[2]);
     auto password = CreateCBStringFromNapiValue(env, args[3]);
-    SLDocument* cret_ = SLPdfLoadBuffer(AJS2N<uint8_t>(env, buffer, false), offset, size, password);
+    SLDocument* cret_ = SLPdfLoadBuffer(AJS2N<const uint8_t>(env, buffer, false), offset, size, password);
 
     return CreateNapiValue(env, cret_);
 }
@@ -121,7 +121,7 @@ extern "C" napi_value NAPI_SLIsPdfDocumentBuffer(
     auto buffer = args[0];
     auto size = GetInt32FromNapiValue(env, args[1]);
     auto version = args[2];
-    cbbool cret_ = SLIsPdfDocumentBuffer(AJS2N<uint8_t>(env, buffer, false), size, BJS2N<SLDocVersion, int32_t>(env, version));
+    cbbool cret_ = SLIsPdfDocumentBuffer(AJS2N<const uint8_t>(env, buffer, false), size, BJS2N<SLDocVersion, int32_t>(env, version));
 
     return CreateNapiValue(env, cret_);
 }
@@ -227,7 +227,7 @@ extern "C" napi_value NAPI_SLDocNewPageAt(
     auto doc = (SLDocument*)GetHandleRefPtrFromNapiValue(env, args[0]);
     auto atIndex = GetInt32FromNapiValue(env, args[1]);
     auto rect = args[2];
-    SLPdfPage* cret_ = SLDocNewPageAt(doc, atIndex, AJS2N<double>(env, rect, false));
+    SLPdfPage* cret_ = SLDocNewPageAt(doc, atIndex, AJS2N<const double>(env, rect, false));
 
     return CreateNapiValue(env, cret_);
 }
@@ -248,7 +248,7 @@ extern "C" napi_value NAPI_SLDocNewPage(
 
     auto doc = (SLDocument*)GetHandleRefPtrFromNapiValue(env, args[0]);
     auto rect = args[1];
-    SLPdfPage* cret_ = SLDocNewPage(doc, AJS2N<double>(env, rect, false));
+    SLPdfPage* cret_ = SLDocNewPage(doc, AJS2N<const double>(env, rect, false));
 
     return CreateNapiValue(env, cret_);
 }

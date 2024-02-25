@@ -11,13 +11,9 @@
 #define DECLARE_NAPI_METHOD(name, func) { #name, 0, func, 0, 0, 0, napi_default, 0 }
 
 #ifdef _MSC_VER
-
     #define EXPORT_ATTRIB __declspec(dllexport)
-
 #else // Non MVSC
-
     #define EXPORT_ATTRIB __attribute__ ((visibility ("default")))
-
 #endif
 
 namespace js
@@ -104,5 +100,14 @@ namespace js
     extern "C" EXPORT_ATTRIB napi_value napi_register_module_v1(napi_env env, napi_value exports)
     {
         return Init(env, exports);
+    }
+
+    // Reference this symbol to ensure all functions are defined"
+    // See https://github.com/dotnet/samples/tree/3870722f5c5e80fd6a70946e6e96a5c990620e42/core/nativeaot/NativeLibrary#user-content-building-static-libraries
+    extern "C"
+    {
+        void* CB_NAPIExports[] = {
+            (void*)napi_register_module_v1
+        };
     }
 }
