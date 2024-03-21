@@ -1,5 +1,4 @@
-﻿#define OBJC_CODEBINDER_EXPORT
-#import "CBDoubleArray.h"
+﻿#import "CBDoubleArray.h"
 #include <cstdlib>
 
 @implementation CBDoubleArray

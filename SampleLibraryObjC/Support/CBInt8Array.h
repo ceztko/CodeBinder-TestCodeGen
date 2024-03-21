@@ -2,10 +2,10 @@
 #define CB_CBINT8ARRAY
 #pragma once
 
-#import "cboclibdefs.h"
+#import "../objclibdefs.h"
 #import <Foundation/Foundation.h>
 
-OBJC_CODEBINDER_API @interface CBInt8Array : NSObject
+OCSAMPLELIBRARY_API @interface CBInt8Array : NSObject
 {
     @private
     int8_t * _data;

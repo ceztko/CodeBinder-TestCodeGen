@@ -2,10 +2,10 @@
 #define CB_CBBOOLARRAY
 #pragma once
 
-#import "cboclibdefs.h"
+#import "../objclibdefs.h"
 #import <Foundation/Foundation.h>
 
-OBJC_CODEBINDER_API @interface CBBoolArray : NSObject
+OCSAMPLELIBRARY_API @interface CBBoolArray : NSObject
 {
     @private
     BOOL * _data;

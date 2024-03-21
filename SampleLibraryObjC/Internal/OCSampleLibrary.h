@@ -2,7 +2,6 @@
 #ifndef CODE_BINDER_OBJC_OCSAMPLELIBRARY_LIBRARY_INTERNAL_HEADER
 #define CODE_BINDER_OBJC_OCSAMPLELIBRARY_LIBRARY_INTERNAL_HEADER
 
-#define OCSAMPLELIBRARY_EXPORT
 
 #if !__has_feature(objc_arc)
     #error "Code Binder projects are ARC only. Use -fobjc-arc flag"

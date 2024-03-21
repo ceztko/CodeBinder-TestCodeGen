@@ -2,10 +2,10 @@
 #define CB_CBDOUBLEARRAY
 #pragma once
 
-#import "cboclibdefs.h"
+#import "../objclibdefs.h"
 #import <Foundation/Foundation.h>
 
-OBJC_CODEBINDER_API @interface CBDoubleArray : NSObject
+OCSAMPLELIBRARY_API @interface CBDoubleArray : NSObject
 {
     @private
     double * _data;

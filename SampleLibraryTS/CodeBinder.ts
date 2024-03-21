@@ -25,6 +25,8 @@ export class BinderUtils
 {
     private static _registry : FinalizationRegistry<IObjectFinalizer>;
 
+    private static _exception : Error | null;
+
     private constructor() { }
 
     static
@@ -48,6 +50,21 @@ export class BinderUtils
             return n as T;
         else
             throw new Error(`Could not cast input to type ${typeof type}`);
+    }
+
+    static checkException(): void
+    {
+        if (BinderUtils._exception != null)
+        {
+            let exception = BinderUtils._exception;
+            BinderUtils._exception = null;
+            throw exception;
+        }
+    }
+
+    static setException(exception: Error): void
+    {
+        BinderUtils._exception = exception;
     }
 
     static createNativeHandle(obj: object): NativeHandle

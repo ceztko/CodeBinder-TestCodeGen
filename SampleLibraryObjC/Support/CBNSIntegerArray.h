@@ -2,10 +2,10 @@
 #define CB_CBNSINTEGERARRAY
 #pragma once
 
-#import "cboclibdefs.h"
+#import "../objclibdefs.h"
 #import <Foundation/Foundation.h>
 
-OBJC_CODEBINDER_API @interface CBNSIntegerArray : NSObject
+OCSAMPLELIBRARY_API @interface CBNSIntegerArray : NSObject
 {
     @private
     NSInteger * _data;

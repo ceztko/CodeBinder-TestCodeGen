@@ -1,5 +1,4 @@
-﻿#define OBJC_CODEBINDER_EXPORT
-#import "CBPtrArray.h"
+﻿#import "CBPtrArray.h"
 #include <cstdlib>
 
 @implementation CBPtrArray

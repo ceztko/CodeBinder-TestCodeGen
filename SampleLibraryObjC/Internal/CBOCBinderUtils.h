@@ -13,6 +13,15 @@
 #include <cinttypes>
 #import <Foundation/Foundation.h>
 
+@interface CBBinderUtils : NSObject
++(void)setException:(NSException*)exception;
+
++(void)checkException;
+
++(void)keepAlive:(NSObject*)obj;
+
+@end
+
 inline void* CBGetNativeHandle(CBHandleRef* handle)
 {
     if (handle == nil)

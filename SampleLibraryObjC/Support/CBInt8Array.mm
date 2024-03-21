@@ -1,5 +1,4 @@
-﻿#define OBJC_CODEBINDER_EXPORT
-#import "CBInt8Array.h"
+﻿#import "CBInt8Array.h"
 #include <cstdlib>
 
 @implementation CBInt8Array

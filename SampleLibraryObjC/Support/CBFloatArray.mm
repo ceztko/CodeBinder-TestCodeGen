@@ -1,5 +1,4 @@
-﻿#define OBJC_CODEBINDER_EXPORT
-#import "CBFloatArray.h"
+﻿#import "CBFloatArray.h"
 #include <cstdlib>
 
 @implementation CBFloatArray

@@ -1,5 +1,4 @@
-﻿#define OBJC_CODEBINDER_EXPORT
-#import "CBUInt32Array.h"
+﻿#import "CBUInt32Array.h"
 #include <cstdlib>
 
 @implementation CBUInt32Array

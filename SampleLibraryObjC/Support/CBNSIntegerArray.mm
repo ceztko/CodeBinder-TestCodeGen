@@ -1,5 +1,4 @@
-﻿#define OBJC_CODEBINDER_EXPORT
-#import "CBNSIntegerArray.h"
+﻿#import "CBNSIntegerArray.h"
 #include <cstdlib>
 
 @implementation CBNSIntegerArray

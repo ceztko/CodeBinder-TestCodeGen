@@ -8,26 +8,26 @@
 #define CBHANDLEDOBJECT_HEADER
 #pragma once
 
-#import "cboclibdefs.h"
+#import "../objclibdefs.h"
 #import <Foundation/Foundation.h>
 #import "CBHandleRef.h"
 
-OBJC_CODEBINDER_API @protocol CBIObjectFinalizer
+OCSAMPLELIBRARY_API @protocol CBIObjectFinalizer
 @end
 
-OBJC_CODEBINDER_API @interface CBHandledObjectFinalizer : NSObject<CBIObjectFinalizer>
+OCSAMPLELIBRARY_API @interface CBHandledObjectFinalizer : NSObject<CBIObjectFinalizer>
 {
     @private void* _handle;
 }
 @end
 
-OBJC_CODEBINDER_API @interface CBFinalizableObject : NSObject
+OCSAMPLELIBRARY_API @interface CBFinalizableObject : NSObject
 {
     @private NSMutableArray* _finalizers;
 }
 @end
 
-OBJC_CODEBINDER_API @interface CBHandledObjectBase : CBFinalizableObject
+OCSAMPLELIBRARY_API @interface CBHandledObjectBase : CBFinalizableObject
 {
     @private void* _handle;
     @private BOOL _handled;
@@ -45,7 +45,7 @@ OBJC_CODEBINDER_API @interface CBHandledObjectBase : CBFinalizableObject
 
 @class CBHandledObject;
 
-OBJC_CODEBINDER_API @interface CBHandledObject <BaseT : CBHandledObjectBase*> : CBHandledObjectBase
+OCSAMPLELIBRARY_API @interface CBHandledObject <BaseT : CBHandledObjectBase*> : CBHandledObjectBase
 @end
 
 #endif // CBHANDLEDOBJECT_HEADER

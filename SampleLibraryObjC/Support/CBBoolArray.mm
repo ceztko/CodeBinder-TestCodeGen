@@ -1,5 +1,4 @@
-﻿#define OBJC_CODEBINDER_EXPORT
-#import "CBBoolArray.h"
+﻿#import "CBBoolArray.h"
 #include <cstdlib>
 
 @implementation CBBoolArray

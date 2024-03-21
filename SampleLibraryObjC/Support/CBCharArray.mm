@@ -1,5 +1,4 @@
-﻿#define OBJC_CODEBINDER_EXPORT
-#import "CBCharArray.h"
+﻿#import "CBCharArray.h"
 #include <cstdlib>
 
 @implementation CBCharArray

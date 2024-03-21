@@ -2,10 +2,10 @@
 #define CB_CBINT32ARRAY
 #pragma once
 
-#import "cboclibdefs.h"
+#import "../objclibdefs.h"
 #import <Foundation/Foundation.h>
 
-OBJC_CODEBINDER_API @interface CBInt32Array : NSObject
+OCSAMPLELIBRARY_API @interface CBInt32Array : NSObject
 {
     @private
     int32_t * _data;

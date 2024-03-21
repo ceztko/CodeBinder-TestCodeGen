@@ -3,11 +3,11 @@
 #define CB_KEYVALUEPAIR
 #pragma once
 
-#import "cboclibdefs.h"
+#import "../objclibdefs.h"
 #import <Foundation/Foundation.h>
 
 // Substitute for .NET KeyValuePair
-OBJC_CODEBINDER_API @interface CBKeyValuePair<__covariant KeyType, __covariant ValueType> : NSObject
+OCSAMPLELIBRARY_API @interface CBKeyValuePair<__covariant KeyType, __covariant ValueType> : NSObject
 {
 @private
     KeyType _key;

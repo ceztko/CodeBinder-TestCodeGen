@@ -3,11 +3,11 @@
 #define CB_HANDLEREF
 #pragma once
 
-#import "cboclibdefs.h"
+#import "../objclibdefs.h"
 #import <Foundation/Foundation.h>
 
 // https://docs.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.handleref
-OBJC_CODEBINDER_API @interface CBHandleRef : NSObject
+OCSAMPLELIBRARY_API @interface CBHandleRef : NSObject
 {
     @private
     NSObject * _wrapper;

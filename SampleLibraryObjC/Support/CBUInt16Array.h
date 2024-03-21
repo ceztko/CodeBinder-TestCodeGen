@@ -2,10 +2,10 @@
 #define CB_CBUINT16ARRAY
 #pragma once
 
-#import "cboclibdefs.h"
+#import "../objclibdefs.h"
 #import <Foundation/Foundation.h>
 
-OBJC_CODEBINDER_API @interface CBUInt16Array : NSObject
+OCSAMPLELIBRARY_API @interface CBUInt16Array : NSObject
 {
     @private
     uint16_t * _data;

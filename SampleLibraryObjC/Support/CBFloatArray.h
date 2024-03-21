@@ -2,10 +2,10 @@
 #define CB_CBFLOATARRAY
 #pragma once
 
-#import "cboclibdefs.h"
+#import "../objclibdefs.h"
 #import <Foundation/Foundation.h>
 
-OBJC_CODEBINDER_API @interface CBFloatArray : NSObject
+OCSAMPLELIBRARY_API @interface CBFloatArray : NSObject
 {
     @private
     float * _data;

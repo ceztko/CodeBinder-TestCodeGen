@@ -2,10 +2,10 @@
 #define CB_CBCHARARRAY
 #pragma once
 
-#import "cboclibdefs.h"
+#import "../objclibdefs.h"
 #import <Foundation/Foundation.h>
 
-OBJC_CODEBINDER_API @interface CBCharArray : NSObject
+OCSAMPLELIBRARY_API @interface CBCharArray : NSObject
 {
     @private
     char * _data;

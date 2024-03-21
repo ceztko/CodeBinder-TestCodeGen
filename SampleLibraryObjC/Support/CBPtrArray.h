@@ -2,10 +2,10 @@
 #define CB_CBPTRARRAY
 #pragma once
 
-#import "cboclibdefs.h"
+#import "../objclibdefs.h"
 #import <Foundation/Foundation.h>
 
-OBJC_CODEBINDER_API @interface CBPtrArray : NSObject
+OCSAMPLELIBRARY_API @interface CBPtrArray : NSObject
 {
     @private
     void ** _data;

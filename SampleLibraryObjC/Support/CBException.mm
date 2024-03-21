@@ -1,5 +1,4 @@
 ﻿/* This file was generated. DO NOT EDIT! */
-#define OBJC_CODEBINDER_EXPORT
 #import "CBException.h"
 
 @implementation CBException

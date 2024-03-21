@@ -3,11 +3,11 @@
 #define CB_EXCPETION
 #pragma once
 
-#import "cboclibdefs.h"
+#import "../objclibdefs.h"
 #import <Foundation/Foundation.h>
 
 // Substitute for .NET Excpetion
-OBJC_CODEBINDER_API @interface CBException : NSException
+OCSAMPLELIBRARY_API @interface CBException : NSException
 - (id)init;
 - (id)init:(NSString *)message;
 @end
