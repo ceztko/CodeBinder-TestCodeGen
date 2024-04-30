@@ -13,8 +13,7 @@
     #ifdef _MSC_VER
         #define SAMPLELIBRARY_SHARED_API __declspec(dllimport)
     #else
-        #define SAMPLELIBRARY_SHARED_API
-         __attribute__ ((visibility ("default")))
+        #define SAMPLELIBRARY_SHARED_API __attribute__ ((visibility ("default")))
     #endif
 #endif
 
