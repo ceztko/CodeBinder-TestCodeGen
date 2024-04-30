@@ -1,6 +1,6 @@
 ﻿partial class Annotation
 {
-    public static unsafe partial SLAnnotationType SLAnnotGetType(
+    public static unsafe partial AnnotationType SLAnnotGetType(
         SLAnnotation* annot)
     {
         return default;

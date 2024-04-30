@@ -24,13 +24,13 @@
     }
 
     public static unsafe partial cbbool SLIsPdfDocument(
-        CodeBinder.cbstring filename, SLDocVersion * version)
+        CodeBinder.cbstring filename, DocVersion * version)
     {
         return default;
     }
 
     public static unsafe partial cbbool SLIsPdfDocumentBuffer(
-        byte* buffer, int size, SLDocVersion * version)
+        byte* buffer, int size, DocVersion * version)
     {
         return default;
     }
@@ -69,7 +69,7 @@
         return default;
     }
 
-    public static unsafe partial SLDocVersion SLDocGetVersion(
+    public static unsafe partial DocVersion SLDocGetVersion(
         SLDocument* doc)
     {
         return default;

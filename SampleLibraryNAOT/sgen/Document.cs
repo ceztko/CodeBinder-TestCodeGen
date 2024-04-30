@@ -22,11 +22,11 @@ partial class Document
 
     [UnmanagedCallersOnly(EntryPoint = "SLIsPdfDocument", CallConvs = new[] { typeof(CallConvCdecl) })]
     public static unsafe partial cbbool SLIsPdfDocument(
-        CodeBinder.cbstring filename, SLDocVersion * version);
+        CodeBinder.cbstring filename, DocVersion * version);
 
     [UnmanagedCallersOnly(EntryPoint = "SLIsPdfDocumentBuffer", CallConvs = new[] { typeof(CallConvCdecl) })]
     public static unsafe partial cbbool SLIsPdfDocumentBuffer(
-        byte* buffer, int size, SLDocVersion * version);
+        byte* buffer, int size, DocVersion * version);
 
     [UnmanagedCallersOnly(EntryPoint = "SLDocGetPageCount", CallConvs = new[] { typeof(CallConvCdecl) })]
     public static unsafe partial int SLDocGetPageCount(
@@ -53,7 +53,7 @@ partial class Document
         SLDocument* doc, double* rect);
 
     [UnmanagedCallersOnly(EntryPoint = "SLDocGetVersion", CallConvs = new[] { typeof(CallConvCdecl) })]
-    public static unsafe partial SLDocVersion SLDocGetVersion(
+    public static unsafe partial DocVersion SLDocGetVersion(
         SLDocument* doc);
 
     [UnmanagedCallersOnly(EntryPoint = "SLDocGetTitle", CallConvs = new[] { typeof(CallConvCdecl) })]
